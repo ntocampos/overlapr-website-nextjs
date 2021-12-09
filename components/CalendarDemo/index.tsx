@@ -2,8 +2,9 @@ import React from 'react'
 import overlapr from 'overlapr'
 
 import events from '../../data/calendarEvents'
-import Container from './CalendarContainer'
+import CalendarContainer from './CalendarContainer'
 import CalendarEvent from './CalendarEvent'
+import { Container } from '@chakra-ui/layout'
 
 const ScheduleDemo = () => {
   const eventData = overlapr.processData(events)
@@ -11,17 +12,17 @@ const ScheduleDemo = () => {
   const maxValue = Math.max(...events.map(({ end }) => end))
 
   return (
-    <main className="mx-auto max-w-6xl p-8 my-4">
+    <Container as="main" minW="container.xl" my={4}>
       <h3>
         In this demo, a simple scheduling application is layed out so we can
         have a look into the library's inner workings.
       </h3>
-      <Container min={minValue} max={maxValue}>
+      <CalendarContainer min={minValue} max={maxValue}>
         {eventData._ordered.map((event) => (
           <CalendarEvent key={event.id} entry={event} />
         ))}
-      </Container>
-    </main>
+      </CalendarContainer>
+    </Container>
   )
 }
 
