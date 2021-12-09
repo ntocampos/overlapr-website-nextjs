@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 
 import Topbar from 'components/Topbar'
-import ScheduleDemo from 'components/ScheduleDemo'
+import CalendarDemo from 'components/CalendarDemo'
 
 import type { NextPage } from 'next'
 
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 
       <main className="">
         <Topbar />
-        <ScheduleDemo />
+        <CalendarDemo />
       </main>
     </div>
   )
